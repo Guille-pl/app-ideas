@@ -3,6 +3,7 @@ body{
     height: 100vh;
     margin: 0;
     padding-bottom: 80px;
+    overflow: hidden;
 }
 
 h1{
@@ -38,51 +39,45 @@ h1{
     top: -40px;
     width: 100%;
     height: 5px;
-    flex-flow: row;
 }
 
 .input_container[data-slider="right"]{
     right: -40px;
     height: 100%;
     width: 5px;
-    flex-flow: column;
 }
 
 .input_container[data-slider="bottom"]{
     bottom: -40px;
     width: 100%;
     height: 5px;
-    flex-flow: row;
 }
 
 .input_container[data-slider="left"]{
     left: -40px;
     height: 100%;
     width: 5px;
-    flex-flow: column;
 }
 
 .input_container > div{
     height: 20px;
     width: 20px;
+    padding: 6px;
     background-color: #181818;
     border: 1px solid white;
     border-radius: 50%;
     position: absolute;
     cursor: pointer;
-    transform-origin: 11px 11px;
-    display: flex;
-    justify-content: center;
 }
 
 .input_container[data-slider="top"] > div,
 .input_container[data-slider="bottom"] > div{
-    top: -9px;
+    top: -14px;
 }
 
 .input_container[data-slider="right"] > div,
 .input_container[data-slider="left"] > div{
-    left: -8px;
+    left: -14px;
 }
 
 #shape{
@@ -90,6 +85,32 @@ h1{
     background: linear-gradient(-45deg, #fff000 0%, #fb2929 100%);
 }
 
+#tooltip{
+    border: 1px solid rgb(0, 255, 200);
+    padding: 10px 20px;
+    width: fit-content;
+    border-radius: 5px;
+    color: white;
+    background: #181818;
+    text-transform: capitalize;
+    position: absolute;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .2s;
+}
+
+#tooltip:after{
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    user-select: none;
+    bottom: -8px;
+    right: calc(50% - 8px);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgb(0, 255, 200);
+}
 
 
 @media (max-width: 1200px){
